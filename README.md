@@ -78,4 +78,4 @@ Currently supported frameworks are:
 2. Magento 2
 3. Laravel
 
-If you wish to add support for other framework, please email [Doghouse Agency](hello@doghouse.agency). Otherwise feel free to create a pull request.
+If you wish to add support for other framework, please email [Doghouse Agency](mailto:hello@doghouse.agency). Otherwise feel free to create a pull request.

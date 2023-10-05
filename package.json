@@ -2,16 +2,16 @@
   "name": "@doghouse/dh-lint",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gitmonkee/dh-lint.git"
+    "url": "git+https://github.com/DoghouseMedia/dh-lint.git"
   },
   "author": "Doghouse Digital Agency (https://doghouse.agency)",
   "license": "BSD-3-Clause",
   "description": "DH Lint is a tool for generating project specific javascript and sass linting configuration files.",
   "bugs": {
-    "url": "https://github.com/gitmonkee/dh-lint/issues"
+    "url": "https://github.com/DoghouseMedia/dh-lint/issues"
   },
-  "homepage": "https://github.com/gitmonkee/dh-lint#readme",
-  "version": "1.0.8",
+  "homepage": "https://github.com/DoghouseMedia/dh-lint#readme",
+  "version": "1.0.0",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -41,12 +41,16 @@
     "inquirer": "^6.0.0",
     "json2yaml": "^1.1.0",
     "minimist": "^1.2.0",
-    "sass-lint": "^1.12.1",
-    "sass-lint-auto-fix": "^0.19.0",
+    "sass-lint": "^1.13.1",
+    "sass-lint-auto-fix": "^0.20.0",
     "stylelint": "^15.10.3",
     "stylelint-checkstyle-formatter": "^0.1.2",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-no-browser-hacks": "^1.2.1",
     "vue-eslint-parser": "^9.3.1"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "linting"
+  ]
 }
