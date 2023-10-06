@@ -34,4 +34,7 @@ rules:
   no-unused-vars:
     - 1
   no-var:
-    - 0
+    - 1
+  object-shorthand:
+    - error
+    - always
