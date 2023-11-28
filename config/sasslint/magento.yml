@@ -1,7 +1,7 @@
 # https://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-less.html
 ---
-options:
-  config-file: "./common.yml"
+extends:
+  - "./common.yml"
 files:
   include: 'app/design/frontend/**/*.s+(a|c)ss'
   ignore: 'vendor/**'

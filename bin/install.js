@@ -8,7 +8,7 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const path = require('path');
 const generateEslintRc = require("../lib/generateEslintConfig");
-const generateSasslintRc = require("../lib/generateSasslintConfig");
+const generateStylelintRc = require("../lib/generateStylelintConfig");
 const generateBabelConfigRc = require("../lib/generateBabelConfig");
 const updatePackageJsonScripts = require("../lib/updatePackageJsonScripts");
 const appRoot = path.resolve('./');
@@ -25,10 +25,10 @@ function eslintrcFileExists() {
 }
 
 /**
- * Determine if a .sass-lint.yml file exists in the project.
+ * Determine if a .stylelintrc.yml file exists in the project.
  */
-function sasslintFileExists() {
-  return fs.existsSync(appRoot + '/.sass-lint.yml');
+function stylelintFileExists() {
+  return fs.existsSync(appRoot + '/.stylelintrc.yml');
 }
 
 /**
@@ -71,17 +71,17 @@ inquirer.prompt([
   },
   {
     type: "confirm",
-    name: "genSasslint",
-    message: "Would you like to generate an sass-lint config file?",
+    name: "genStylelint",
+    message: "Would you like to generate an stylelintrc.yaml config file?",
     default: true
   },
   {
     type: "confirm",
-    name: 'replaceSasslint',
+    name: 'replaceStylelint',
     default: true,
-    message: 'A .sass-lint.yml already exists, would you like to replace it?',
+    message: 'A .stylelintrc.yml already exists, would you like to replace it?',
     when: function(answers) {
-      return answers.genSasslint && sasslintFileExists();
+      return answers.genStylelint && stylelintFileExists();
     }
   },
   {
@@ -105,13 +105,13 @@ inquirer.prompt([
     message: "Would you like to update your package.json file with linting scripts?",
     default: true
   }
-]).then( ({framework, genEslintRc, replaceEslintrc, genSasslint, replaceSasslint, genBabelConfig, replaceBabelConfig, updateNpmScripts}) => {
+]).then( ({framework, genEslintRc, replaceEslintrc, genStylelint, replaceStylelint, genBabelConfig, replaceBabelConfig, updateNpmScripts}) => {
   if (typeof replaceEslintrc === 'undefined') {
     replaceEslintrc = true;
   }
 
-  if (typeof replaceSasslint === 'undefined') {
-    replaceSasslint = true;
+  if (typeof replaceStylelint === 'undefined') {
+    replaceStylelint = true;
   }
 
   if (typeof replaceBabelConfig === 'undefined') {
@@ -122,8 +122,8 @@ inquirer.prompt([
     generateEslintRc(framework);
   }
 
-  if (genSasslint && replaceSasslint) {
-    generateSasslintRc(framework);
+  if (genStylelint && replaceStylelint) {
+    generateStylelintRc(framework);
   }
 
   if (genBabelConfig && replaceBabelConfig) {

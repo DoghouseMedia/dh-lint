@@ -1,5 +1,7 @@
 ---
-extends: 'airbnb-base'
+extends:
+  - 'airbnb-base'
+  - 'plugin:jsdoc/recommended'
 root: true
 env:
   browser: 1
@@ -22,12 +24,6 @@ rules:
     - 0
   no-prototype-builtins:
     - 0
-  valid-jsdoc:
-    - 1
-    - prefer:
-        returns: return
-        property: prop
-      requireReturn: false
   brace-style:
     - error
     - stroustrup
