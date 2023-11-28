@@ -1,6 +1,3 @@
 ---
-options:
-  config-file: "./common.yml"
-files:
-  include: 'resources/sass/**/*.s+(a|c)ss'
-  ignore: 'vendor/**'
+extends:
+  - "./common.yml"

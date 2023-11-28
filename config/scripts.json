@@ -1,6 +1,6 @@
 {
-  "lint:sass": "sass-lint -c .sass-lint.yml -v -q",
-  "lint:sass-fix": "sass-lint-auto-fix -c .sass-lint.yml",
+  "lint:sass": "stylelint --color %PATH%",
+  "lint:sass-fix": "stylelint --color %PATH% --fix",
   "lint:js": "eslint --color %PATH%",
   "lint:js-fix": "eslint --color --fix %PATH%",
   "lint:vue": "eslint --ext .vue %PATH%",

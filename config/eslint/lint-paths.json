@@ -1,5 +1,12 @@
 {
-  "drupal": "docroot/themes/custom docroot/modules/custom",
-  "laravel": "resources/assets/js",
-  "magento": ""
+  "js": {
+    "drupal": "docroot/themes/custom docroot/modules/custom",
+    "laravel": "resources/assets/js",
+    "magento": ""
+  },
+  "scss": {
+    "drupal": "docroot/themes/custom/**/*.scss docroot/modules/custom/**/*.scss",
+    "laravel": "resources/assets/scss/**/*.scss",
+    "magento": ""
+  }
 }

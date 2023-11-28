@@ -30,20 +30,19 @@ The config files generated in your projects root directory both extend framework
 
 The base eslint config file in this package extends from the [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 
-**Sass-lint.yml configuration**
+**Stylelintrc.yml configuration**
 
-Dh-lint scans your stylesheets based on the chosen framework. 
-You have the flexibility to modify or append scan paths by making adjustments in the sass-lint.yml file. 
+Dh-lint scans your stylesheets based on the chosen framework using [Stylelint](https://stylelint.io/) and [Stylelint-scss](https://stylelint.io/).
+You have the flexibility to modify the config and make the required adjustments in the .stylelintrc.yml file. 
 For instance,
 ```yaml
 ---
-  options:
-    config-file: "./node_modules/@doghouse/dh-lint/config/sasslint/laravel.yml"
-  files:
-      include:
-        - 'resources/assets/sass/**/*.s+(a|c)ss'
-        - 'resources/sass/**/*.s+(a|c)ss'
-        - 'my-custom-path/sass/**/*.s+(a|c)ss'
+  extends: "./node_modules/@doghouse/dh-lint/config/sasslint/laravel.yml"
+  # Override rules 
+  rules:
+    comment-no-empty: null
+    selector-class-pattern: null
+    declaration-empty-line-before: null
 ```
 
 ---
@@ -66,7 +65,7 @@ If you opted to update your package.json file with linting scripts, then you may
 
 ## Dependencies
 
-This project depends on [eslint](https://github.com/eslint/eslint) for javascript linting and [sass-lint](https://github.com/sasstools/sass-lint) for sass linting.
+This project depends on [eslint](https://github.com/eslint/eslint) for javascript linting and [stylelint](https://stylelint.io/) for sass linting.
 
 ---
 
