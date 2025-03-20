@@ -1,3 +1,7 @@
 ---
 extends:
   - "./common.yml"
+rules:
+  selector-class-pattern: null
+  scss/at-import-partial-extension: null
+  value-keyword-case: null

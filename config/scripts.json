@@ -1,10 +1,24 @@
 {
-  "lint:sass": "stylelint --color %PATH%",
-  "lint:sass-fix": "stylelint --color %PATH% --fix",
-  "lint:js": "eslint --color %PATH%",
-  "lint:js-fix": "eslint --color --fix %PATH%",
-  "lint:vue": "eslint --ext .vue %PATH%",
-  "lint:vue-fix": "eslint --fix --ext .vue %PATH%",
-  "lint": "npm run lint:sass; npm run lint:js; npm run lint:vue",
-  "lint-fix": "npm run lint:sass-fix; npm run lint:js-fix; npm run lint:vue-fix"
+  "laravel": {
+    "lint:sass": "stylelint --color resources/assets/scss/**/*.scss",
+    "lint:sass-fix": "stylelint --color resources/assets/scss/**/*.scss --fix",
+    "lint:js": "eslint --color resources/assets/js",
+    "lint:js-fix": "eslint --color --fix resources/assets/js",
+    "lint:vue": "eslint --ext .vue resources/assets/js",
+    "lint:vue-fix": "eslint --fix --ext .vue resources/assets/js",
+    "lint": "npm run lint:sass; npm run lint:js; npm run lint:vue",
+    "lint-fix": "npm run lint:sass-fix; npm run lint:js-fix; npm run lint:vue-fix"
+  },
+  "drupal": {
+    "lint:sass": "npm run lint:sass-theme; npm run lint:sass-modules",
+    "lint:sass-theme": "stylelint --color web/themes/custom/**/*.scss --allow-empty-input",
+    "lint:sass-modules": "stylelint --color web/modules/custom/**/*.scss --allow-empty-input",
+    "lint:sass-fix": "stylelint --color web/themes/custom/**/*.scss web/modules/custom/**/*.scss --fix --allow-empty-input",
+    "lint:js-theme": "eslint --no-eslintrc --config .eslintrc.yml --color web/themes/custom --no-error-on-unmatched-pattern",
+    "lint:js-modules": "eslint --no-eslintrc --config .eslintrc.yml --color web/modules/custom --no-error-on-unmatched-pattern",
+    "lint:js": "npm run lint:js-theme && npm run lint:js-modules",
+    "lint:js-fix": "eslint --no-eslintrc --config .eslintrc.yml --color --fix web/themes/custom web/modules/custom --no-error-on-unmatched-pattern",
+    "lint": "npm run lint:sass && npm run lint:js",
+    "lint-fix": "npm run lint:sass-fix && npm run lint:js-fix"
+  }
 }
