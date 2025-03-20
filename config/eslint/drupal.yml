@@ -16,3 +16,10 @@ globals:
   Backbone: true
   Modernizr: true
   CKEDITOR: true
+  once: true
+ignorePatterns:
+  - "dist/**/*.js"
+  - "node_modules/**/*.js"
+  - "vendor/**/*.js"
+  - "*.yml"
+  - "components"
